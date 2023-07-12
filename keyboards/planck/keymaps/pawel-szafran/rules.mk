@@ -1,5 +1,4 @@
 AUDIO_ENABLE = no
 
-ifeq ($(strip $(AUDIO_ENABLE)), yes)
-    SRC += muse.c
-endif
+SRC += oneshot.c
+SRC += swapper.c
