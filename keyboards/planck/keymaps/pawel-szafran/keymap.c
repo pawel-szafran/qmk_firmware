@@ -1,4 +1,4 @@
-/* Copyright 2015-2021 Jack Humbert
+/* Copyright 2023 Pawel Szafran
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -25,8 +25,10 @@
 #define BACK G(KC_LBRC)
 #define TABL G(S(KC_LBRC))
 #define TABR G(S(KC_RBRC))
-#define SPCL A(G(KC_LEFT))
-#define SPC_R A(G(KC_RGHT))
+#define PANL C(S(KC_LBRC))
+#define PANR C(S(KC_RBRC))
+#define SFT_TAB S(KC_TAB)
+#define SW_WIN G(KC_GRV)
 #define LA_SYM MO(SYM)
 #define LA_NAV MO(NAV)
 
@@ -44,8 +46,16 @@ enum planck_keycodes {
   OS_ALT,
   OS_CMD,
 
-  SW_WIN,  // Switch to next window         (cmd-tab)
-  SW_LANG, // Switch to next input language (ctl-spc)
+  SW_APP,  // Switch to next app (cmd-tab)
+
+  EX_LA,
+  EX_RA,
+  EX_RFA,
+  EX_PIPE,
+  EX_INS,
+  EX_W,
+  EX_S,
+  EX_DEF,
 };
 
 #define LOWER MO(_LOWER)
@@ -53,31 +63,31 @@ enum planck_keycodes {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [DEF] = LAYOUT_planck_grid(
-      KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    _______, _______, KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,   
-      KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    _______, _______, KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN,
-      KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    _______, _______, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH,
-      QK_BOOT, _______, _______, LA_NAV,  KC_LSFT, _______, _______, KC_SPC,  LA_SYM,  _______, _______, _______ 
+      KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    XXXXXXX, XXXXXXX, KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,   
+      KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    XXXXXXX, XXXXXXX, KC_H,    KC_J,    KC_K,    KC_L,    KC_QUOT,
+      KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    XXXXXXX, XXXXXXX, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH,
+      XXXXXXX, XXXXXXX, KC_ESC,  LA_NAV,  KC_LSFT, XXXXXXX, XXXXXXX, KC_SPC,  LA_SYM,  KC_ENT,  XXXXXXX, XXXXXXX 
   ),
 
   [SYM] = LAYOUT_planck_grid(
-      KC_ESC,  KC_LBRC, KC_LCBR, KC_LPRN, KC_TILD, _______, _______, KC_CIRC, KC_RPRN, KC_RCBR, KC_RBRC, KC_GRV,
-      KC_MINS, KC_ASTR, KC_EQL,  KC_UNDS, KC_DLR,  _______, _______, KC_HASH, OS_CMD,  OS_ALT,  OS_CTRL, OS_SHFT,
-      KC_PLUS, KC_PIPE, KC_AT,   KC_BSLS, KC_PERC, _______, _______, XXXXXXX, KC_AMPR, KC_SCLN, KC_COLN, KC_EXLM,
-      _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______ 
+      KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, XXXXXXX, XXXXXXX, KC_CIRC, KC_AMPR, KC_ASTR, KC_SCLN, XXXXXXX,
+      KC_TILD, KC_MINS, KC_UNDS, KC_COLN, KC_EQL,  XXXXXXX, XXXXXXX, KC_PLUS, OS_CMD,  OS_ALT,  OS_CTRL, OS_SHFT,
+      KC_GRV,  KC_LBRC, KC_LCBR, KC_LPRN, KC_PIPE, XXXXXXX, XXXXXXX, XXXXXXX, KC_RPRN, KC_RCBR, KC_RBRC, KC_BSLS,
+      XXXXXXX, XXXXXXX, _______, _______, _______, XXXXXXX, XXXXXXX, _______, _______, _______, XXXXXXX, XXXXXXX 
   ),
 
   [NAV] = LAYOUT_planck_grid(
-      KC_TAB,  SW_WIN,  TABL,    TABR,    KC_VOLU, _______, _______, QK_BOOT, HOME,    KC_UP,   END,     KC_DEL,
-      OS_SHFT, OS_CTRL, OS_ALT,  OS_CMD,  KC_VOLD, _______, _______, KC_CAPS, KC_LEFT, KC_DOWN, KC_RGHT, KC_BSPC,
-      SPCL,    SPC_R,   BACK,    FWD,     KC_MPLY, _______, _______, XXXXXXX, KC_PGDN, KC_PGUP, SW_LANG, KC_ENT,
-      _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______ 
+      PANL,    PANR,    TABL,    TABR,    KC_VOLU, XXXXXXX, XXXXXXX, SW_APP,  KC_TAB,  SFT_TAB, SW_WIN,  KC_DEL,
+      OS_SHFT, OS_CTRL, OS_ALT,  OS_CMD,  KC_VOLD, XXXXXXX, XXXXXXX, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, CW_TOGG,
+      QK_BOOT, XXXXXXX, BACK,    FWD,     KC_MPLY, XXXXXXX, XXXXXXX, HOME,    KC_PGDN, KC_PGUP, END,     XXXXXXX,
+      XXXXXXX, XXXXXXX, _______, _______, _______, XXXXXXX, XXXXXXX, KC_BSPC, _______, _______, XXXXXXX, XXXXXXX 
   ),
 
   [NUM] = LAYOUT_planck_grid(
-      KC_7,    KC_5,    KC_3,    KC_1,    KC_9,    _______, _______, KC_8,    KC_0,    KC_2,    KC_4,    KC_6,
-      OS_SHFT, OS_CTRL, OS_ALT,  OS_CMD,  KC_F11,  _______, _______, KC_F10,  OS_CMD,  OS_ALT,  OS_CTRL, OS_SHFT,
-      KC_F7,   KC_F5,   KC_F3,   KC_F1,   KC_F9,   _______, _______, KC_F8,   KC_F12,  KC_F2,   KC_F4,   KC_F6,
-      _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______ 
+      KC_7,    KC_5,    KC_3,    KC_1,    KC_9,    XXXXXXX, XXXXXXX, KC_8,    KC_0,    KC_2,    KC_4,    KC_6,
+      OS_SHFT, OS_CTRL, OS_ALT,  OS_CMD,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, OS_CMD,  OS_ALT,  OS_CTRL, OS_SHFT,
+      EX_LA,   EX_RA,   EX_RFA,  EX_PIPE, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, EX_INS,  EX_W,    EX_S,    EX_DEF,
+      XXXXXXX, XXXXXXX, _______, _______, _______, XXXXXXX, XXXXXXX, _______, _______, _______, XXXXXXX, XXXXXXX 
   )
 };
 
@@ -106,8 +116,7 @@ bool is_oneshot_ignored_key(uint16_t keycode) {
     }
 }
 
-bool sw_win_active = false;
-bool sw_lang_active = false;
+bool sw_app_active = false;
 
 oneshot_state os_shft_state = os_up_unqueued;
 oneshot_state os_ctrl_state = os_up_unqueued;
@@ -116,11 +125,7 @@ oneshot_state os_cmd_state = os_up_unqueued;
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     update_swapper(
-        &sw_win_active, KC_LGUI, KC_TAB, SW_WIN,
-        keycode, record
-    );
-    update_swapper(
-        &sw_lang_active, KC_LCTL, KC_SPC, SW_LANG,
+        &sw_app_active, KC_LGUI, KC_TAB, SW_APP,
         keycode, record
     );
 
@@ -140,6 +145,49 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         &os_cmd_state, KC_LCMD, OS_CMD,
         keycode, record
     );
+
+    switch (keycode) {
+    case EX_LA:
+        if (record->event.pressed) {
+            SEND_STRING(" <- ");
+        }
+        break;
+    case EX_RA:
+        if (record->event.pressed) {
+            SEND_STRING(" -> ");
+        }
+        break;
+    case EX_RFA:
+        if (record->event.pressed) {
+            SEND_STRING(" => ");
+        }
+        break;
+    case EX_PIPE:
+        if (record->event.pressed) {
+            SEND_STRING("|> ");
+        }
+        break;
+    case EX_INS:
+        if (record->event.pressed) {
+            SEND_STRING("|s if\n");
+        }
+        break;
+    case EX_W:
+        if (record->event.pressed) {
+            SEND_STRING("~w(");
+        }
+        break;
+    case EX_S:
+        if (record->event.pressed) {
+            SEND_STRING("~s<");
+        }
+        break;
+    case EX_DEF:
+        if (record->event.pressed) {
+            SEND_STRING(" \\\\ ");
+        }
+        break;
+    }
 
     return true;
 }
