@@ -86,7 +86,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  //╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
               KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,      KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,   
               KC_A,     KC_S,     KC_D,     KC_F,     KC_G,      KC_H,     KC_J,     KC_K,     KC_L,     KC_QUOT,
-    KC_Q,     KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,      KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,  KC_P,
+    XXXXXXX,  KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,      KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,  XXXXXXX,
                                   KC_ESC,   LA_NAV,   KC_LSFT,   KC_SPC,   LA_SYM,   KC_ENT
  ),
 
@@ -94,7 +94,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  //╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
               KC_EXLM,  KC_AT,    KC_HASH,  KC_DLR,   KC_PERC,   KC_CIRC,  KC_AMPR,  KC_ASTR,  KC_SCLN,  XXXXXXX,
               KC_TILD,  KC_MINS,  KC_UNDS,  KC_COLN,  KC_EQL,    KC_PLUS,  OS_CMD,   OS_ALT,   OS_CTRL,  OS_SHFT,
-    KC_EXLM,  KC_GRV,   KC_LBRC,  KC_LCBR,  KC_LPRN,  KC_PIPE,   XXXXXXX,  KC_RPRN,  KC_RCBR,  KC_RBRC,  KC_BSLS,  XXXXXXX,
+    _______,  KC_GRV,   KC_LBRC,  KC_LCBR,  KC_LPRN,  KC_PIPE,   XXXXXXX,  KC_RPRN,  KC_RCBR,  KC_RBRC,  KC_BSLS,  _______,
                                   _______,  _______,  _______,   _______,  _______,  _______
  ),
 
@@ -102,7 +102,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  //╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
               PANL,     PANR,     TABL,     TABR,     KC_VOLU,   SW_APP,   KC_TAB,   SFT_TAB,  SW_WIN,   KC_DEL,
               OS_SHFT,  OS_CTRL,  OS_ALT,   OS_CMD,   KC_VOLD,   KC_LEFT,  KC_DOWN,  KC_UP,    KC_RGHT,  CW_TOGG,
-    PANL,     QK_BOOT,  XXXXXXX,  BACK,     FWD,      KC_MPLY,   HOME,     KC_PGDN,  KC_PGUP,  END,      XXXXXXX,  KC_DEL,
+    _______,  QK_BOOT,  XXXXXXX,  BACK,     FWD,      KC_MPLY,   HOME,     KC_PGDN,  KC_PGUP,  END,      XXXXXXX,  _______,
                                   _______,  _______,  _______,   KC_BSPC,  _______,  _______
  ),
 
@@ -110,7 +110,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  //╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
               KC_7,     KC_5,     KC_3,     KC_1,     KC_9,      KC_8,     KC_0,     KC_2,     KC_4,     KC_6,
               OS_SHFT,  OS_CTRL,  OS_ALT,   OS_CMD,   XXXXXXX,   XXXXXXX,  OS_CMD,   OS_ALT,   OS_CTRL,  OS_SHFT,
-    KC_7,     EX_LA,    EX_RA,    EX_RFA,   EX_PIPE,  XXXXXXX,   XXXXXXX,  EX_INS,   EX_W,     EX_S,     EX_DEF,   KC_6,
+    _______,  EX_LA,    EX_RA,    EX_RFA,   EX_PIPE,  XXXXXXX,   XXXXXXX,  EX_INS,   EX_W,     EX_S,     EX_DEF,   _______,
                                   _______,  _______,  _______,   _______,  _______,  _______
  )
 };
