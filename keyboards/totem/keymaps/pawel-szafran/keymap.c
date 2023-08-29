@@ -50,7 +50,6 @@ enum custom_keycodes {
   EX_RA,
   EX_RFA,
   EX_PIPE,
-  EX_INS,
   EX_W,
   EX_S,
   EX_DEF,
@@ -110,7 +109,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  //╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
               KC_7,     KC_5,     KC_3,     KC_1,     KC_9,      KC_8,     KC_0,     KC_2,     KC_4,     KC_6,
               OS_SHFT,  OS_CTRL,  OS_ALT,   OS_CMD,   XXXXXXX,   XXXXXXX,  OS_CMD,   OS_ALT,   OS_CTRL,  OS_SHFT,
-    _______,  EX_LA,    EX_RA,    EX_RFA,   EX_PIPE,  XXXXXXX,   XXXXXXX,  EX_INS,   EX_W,     EX_S,     EX_DEF,   _______,
+    _______,  XXXXXXX,  EX_LA,    EX_RA,    EX_RFA,   XXXXXXX,   XXXXXXX,  EX_PIPE,  EX_W,     EX_S,     EX_DEF,   _______,
                                   _______,  _______,  _______,   _______,  _______,  _______
  )
 };
@@ -194,11 +193,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case EX_PIPE:
         if (record->event.pressed) {
             SEND_STRING("|> ");
-        }
-        break;
-    case EX_INS:
-        if (record->event.pressed) {
-            SEND_STRING("|s if\n");
         }
         break;
     case EX_W:
