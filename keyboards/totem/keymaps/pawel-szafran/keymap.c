@@ -101,15 +101,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  //╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
               PANL,     PANR,     TABL,     TABR,     KC_VOLU,   SW_APP,   KC_TAB,   SFT_TAB,  SW_WIN,   KC_DEL,
               OS_SHFT,  OS_CTRL,  OS_ALT,   OS_CMD,   KC_VOLD,   KC_LEFT,  KC_DOWN,  KC_UP,    KC_RGHT,  CW_TOGG,
-    _______,  QK_BOOT,  XXXXXXX,  BACK,     FWD,      KC_MPLY,   HOME,     KC_PGDN,  KC_PGUP,  END,      XXXXXXX,  _______,
+    _______,  _______,  XXXXXXX,  BACK,     FWD,      KC_MPLY,   HOME,     KC_PGDN,  KC_PGUP,  END,      XXXXXXX,  _______,
                                   _______,  _______,  _______,   KC_BSPC,  _______,  _______
  ),
 
    [NUM] = LAYOUT(
  //╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
-              KC_7,     KC_5,     KC_3,     KC_1,     KC_9,      KC_8,     KC_0,     KC_2,     KC_4,     KC_6,
-              OS_SHFT,  OS_CTRL,  OS_ALT,   OS_CMD,   XXXXXXX,   XXXXXXX,  OS_CMD,   OS_ALT,   OS_CTRL,  OS_SHFT,
-    _______,  XXXXXXX,  EX_LA,    EX_RA,    EX_RFA,   XXXXXXX,   XXXXXXX,  EX_PIPE,  EX_W,     EX_S,     EX_DEF,   _______,
+              EX_DEF,   EX_S,     EX_W,     EX_PIPE,  XXXXXXX,   KC_PLUS,  KC_1,     KC_2,     KC_3,     KC_ASTR,
+              OS_SHFT,  OS_CTRL,  OS_ALT,   OS_CMD,   XXXXXXX,   KC_0,     KC_4,     KC_5,     KC_6,     KC_EQL,
+    _______,  XXXXXXX,  EX_LA,    EX_RA,    EX_RFA,   XXXXXXX,   KC_MINS,  KC_7,     KC_8,     KC_9,     KC_SLSH,   QK_BOOT,
                                   _______,  _______,  _______,   _______,  _______,  _______
  )
 };
