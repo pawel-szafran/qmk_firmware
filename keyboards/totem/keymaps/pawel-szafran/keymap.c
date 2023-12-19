@@ -99,17 +99,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
    [NAV] = LAYOUT(
  //╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
-              PANL,     PANR,     TABL,     TABR,     KC_VOLU,   SW_APP,   KC_TAB,   SFT_TAB,  SW_WIN,   KC_DEL,
-              OS_SHFT,  OS_CTRL,  OS_ALT,   OS_CMD,   KC_VOLD,   KC_LEFT,  KC_DOWN,  KC_UP,    KC_RGHT,  CW_TOGG,
-    _______,  _______,  XXXXXXX,  BACK,     FWD,      KC_MPLY,   HOME,     KC_PGDN,  KC_PGUP,  END,      XXXXXXX,  _______,
+              XXXXXXX,  PANL,     TABL,     TABR,     PANR,      SW_APP,   KC_TAB,   SFT_TAB,  SW_WIN,   KC_DEL,
+              OS_SHFT,  OS_CTRL,  OS_ALT,   OS_CMD,   KC_MPLY,   KC_LEFT,  KC_DOWN,  KC_UP,    KC_RGHT,  CW_TOGG,
+    _______,  _______,  XXXXXXX,  BACK,     FWD,      KC_MNXT,   HOME,     KC_PGDN,  KC_PGUP,  END,      XXXXXXX,  _______,
                                   _______,  _______,  _______,   KC_BSPC,  _______,  _______
  ),
 
    [NUM] = LAYOUT(
  //╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
-              EX_DEF,   EX_S,     EX_W,     EX_PIPE,  XXXXXXX,   KC_PLUS,  KC_1,     KC_2,     KC_3,     KC_ASTR,
-              OS_SHFT,  OS_CTRL,  OS_ALT,   OS_CMD,   XXXXXXX,   KC_0,     KC_4,     KC_5,     KC_6,     KC_EQL,
-    _______,  XXXXXXX,  EX_LA,    EX_RA,    EX_RFA,   XXXXXXX,   KC_MINS,  KC_7,     KC_8,     KC_9,     KC_SLSH,   QK_BOOT,
+              EX_DEF,   EX_S,     EX_W,     KC_0,     KC_DOT,    KC_UNDS,  KC_1,     KC_2,     KC_3,     KC_ASTR,
+              OS_SHFT,  OS_CTRL,  OS_ALT,   OS_CMD,   KC_EQL,    KC_PLUS,  KC_4,     KC_5,     KC_6,     KC_SLSH,
+    _______,  EX_LA,    EX_RA,    EX_RFA,   EX_PIPE,  XXXXXXX,   KC_MINS,  KC_7,     KC_8,     KC_9,     XXXXXXX,   QK_BOOT,
                                   _______,  _______,  _______,   _______,  _______,  _______
  )
 };
