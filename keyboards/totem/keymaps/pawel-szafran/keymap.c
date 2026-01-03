@@ -1,19 +1,18 @@
-/* 
+/*
                                              ▀▀▀▀▀     ▀▀▀▀▀          ▀▀█▀▀
                                              ▄▀▀▀▄  ▄  ▄▀▀▀▄  ▄  ▄▀▀▀▄  █  ▄▀▀▀▄
                                              █   █  █  █   █  █  █   █  █  █   █
                                               ▀▀▀   █   ▀▀▀   █   ▀▀▀   ▀   ▀▀▀
-                                                    █      ▄▄▄█▄▄▄    █   █  
+                                                    █      ▄▄▄█▄▄▄    █   █
                                                     ▀      █  █  █     █▄█
-                                                  ▀▀▀▀▀    █  █  █      ▀   
-                                                           ▀  ▀  ▀  pawel-szafran  
-                                                                                                                                  
+                                                  ▀▀▀▀▀    █  █  █      ▀
+                                                           ▀  ▀  ▀  pawel-szafran
+
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 */
 
 #include QMK_KEYBOARD_H
 #include <stdio.h>
-#include "totem.h"
 #include "oneshot.h"
 
 // ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -23,7 +22,7 @@
 
 // ┌─────────────────────────────────────────────────┐
 // │ d e f i n e   l a y e r s                       │
-// └─────────────────────────────────────────────────┘ 
+// └─────────────────────────────────────────────────┘
 
 enum totem_layers {
   DEF,
@@ -80,7 +79,7 @@ enum custom_keycodes {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    [DEF] = LAYOUT(
  //╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
-              KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,      KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,   
+              KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,      KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,
               KC_A,     KC_S,     KC_D,     KC_F,     KC_G,      KC_H,     KC_J,     KC_K,     KC_L,     KC_QUOT,
     XXXXXXX,  KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,      KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,  XXXXXXX,
                                   KC_ESC,   LA_NAV,   KC_LSFT,   KC_SPC,   LA_SYM,   KC_ENT
@@ -96,7 +95,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
    [NAV] = LAYOUT(
  //╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
-              XXXXXXX,  PANL,     TABL,     TABR,     PANR,      XXXXXXX,  KC_TAB,   SFT_TAB,  SW_WIN,   KC_DEL,
+              XXXXXXX,  PANL,     TABL,     TABR,     PANR,      KC_X,     KC_TAB,   SFT_TAB,  SW_WIN,   KC_DEL,
               OS_SHFT,  OS_CTRL,  OS_ALT,   OS_CMD,   KC_MPLY,   KC_LEFT,  KC_DOWN,  KC_UP,    KC_RGHT,  CW_TOGG,
     _______,  _______,  XXXXXXX,  BACK,     FWD,      KC_MNXT,   HOME,     KC_PGDN,  KC_PGUP,  END,      XXXXXXX,  _______,
                                   _______,  _______,  _______,   KC_BSPC,  _______,  _______
@@ -230,6 +229,3 @@ layer_state_t layer_state_set_user(layer_state_t state) {
                                                           ████████
 
 */
-
-
-

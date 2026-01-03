@@ -11,8 +11,8 @@ for more options.
 //#define TAPPING_TERM 170
 #define TAPPING_TERM 170
 
-// Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
-#define TAPPING_FORCE_HOLD
+// Disable quick tap (double-tap to repeat) - equivalent to old TAPPING_FORCE_HOLD
+#define QUICK_TAP_TERM 0
 
 // Auto Shift
 #define NO_AUTO_SHIFT_ALPHA
