@@ -15,7 +15,6 @@
 #include <stdio.h>
 #include "totem.h"
 #include "oneshot.h"
-#include "swapper.h"
 
 // ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
 // │ D E F I N I T I O N S                                                                                                  │
@@ -43,8 +42,6 @@ enum custom_keycodes {
   OS_CTRL,
   OS_ALT,
   OS_CMD,
-
-  SW_APP,  // Switch to next app (cmd-tab)
 
   EX_LA,
   EX_RA,
@@ -99,7 +96,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
    [NAV] = LAYOUT(
  //╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
-              XXXXXXX,  PANL,     TABL,     TABR,     PANR,      SW_APP,   KC_TAB,   SFT_TAB,  SW_WIN,   KC_DEL,
+              XXXXXXX,  PANL,     TABL,     TABR,     PANR,      XXXXXXX,  KC_TAB,   SFT_TAB,  SW_WIN,   KC_DEL,
               OS_SHFT,  OS_CTRL,  OS_ALT,   OS_CMD,   KC_MPLY,   KC_LEFT,  KC_DOWN,  KC_UP,    KC_RGHT,  CW_TOGG,
     _______,  _______,  XXXXXXX,  BACK,     FWD,      KC_MNXT,   HOME,     KC_PGDN,  KC_PGUP,  END,      XXXXXXX,  _______,
                                   _______,  _______,  _______,   KC_BSPC,  _______,  _______
@@ -144,19 +141,12 @@ bool is_oneshot_ignored_key(uint16_t keycode) {
     }
 }
 
-bool sw_app_active = false;
-
 oneshot_state os_shft_state = os_up_unqueued;
 oneshot_state os_ctrl_state = os_up_unqueued;
 oneshot_state os_alt_state = os_up_unqueued;
 oneshot_state os_cmd_state = os_up_unqueued;
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    update_swapper(
-        &sw_app_active, KC_LGUI, KC_TAB, SW_APP,
-        keycode, record
-    );
-
     update_oneshot(
         &os_shft_state, KC_LSFT, OS_SHFT,
         keycode, record
